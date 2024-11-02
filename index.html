@@ -50,17 +50,17 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            padding: 0; /* Menghapus padding untuk mengangkat gambar ke atas */
+            padding: 2rem; /* Menambahkan padding untuk memberikan ruang di sekeliling konten */
             position: relative;
             z-index: 10;
-            margin-top: 0; /* Menghapus margin atas untuk menempatkan gambar di atas */
+            width: 100%; /* Memastikan lebar 100% untuk responsif */
+            max-width: 600px; /* Batas lebar maksimum */
+            margin: 0 auto; /* Memastikan posisi di tengah */
         }
 
         .image-container {
-            max-width: 300px;
             width: 100%;
             margin-bottom: 1.5rem;
-            margin-top: 1rem; /* Menambahkan sedikit margin atas agar tidak terlalu rapat */
         }
 
         .flower-image {
@@ -83,12 +83,6 @@
         .content {
             max-width: 600px;
             margin-bottom: 1.5rem;
-        }
-
-        .content h1 {
-            font-size: 1.5rem;
-            color: #333;
-            margin-bottom: 1rem;
         }
 
         .content p {
@@ -151,9 +145,6 @@
         @media (max-width: 768px) {
             .title {
                 font-size: 2rem; /* Ukuran font judul lebih kecil untuk tampilan mobile */
-            }
-            .content h1 {
-                font-size: 1.5rem; /* Mengurangi ukuran font untuk tampilan mobile */
             }
             .content p {
                 font-size: 0.9rem; /* Mengurangi ukuran font untuk tampilan mobile */
