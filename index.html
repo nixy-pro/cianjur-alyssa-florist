@@ -20,10 +20,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center; /* Menjaga elemen di tengah */
             min-height: 100vh;
             overflow-x: hidden;
-            background: #f5f5f5; /* Warna latar belakang abu-abu terang */
+            background: #f5f5f5;
+            position: relative;
         }
 
         /* Latar Belakang Animasi */
@@ -44,46 +44,41 @@
             100% { transform: translateY(-100%); }
         }
 
+        /* Judul */
+        .title {
+            margin: 20px 0;
+            text-align: center;
+            font-size: 2.5rem; /* Ukuran font judul */
+            color: #FF5722; /* Warna judul */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Bayangan pada teks judul */
+        }
+
         /* Bagian Utama */
         .main-section {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            padding: 1rem; /* Padding untuk memberikan ruang di sekeliling konten */
+            padding: 2rem 1rem; /* Memberikan ruang untuk konten */
             position: relative;
             z-index: 10;
-            max-width: 600px; /* Batas lebar maksimum */
-            margin: 20px auto; /* Margin auto untuk sentralisasi */
         }
 
         .image-container {
+            max-width: 90%;
             width: 100%;
-            border-radius: 15px;
-            overflow: hidden; /* Untuk memotong gambar jika melebihi batas */
+            margin-bottom: 1.5rem;
         }
 
         .flower-image {
             width: 100%;
-            height: auto; /* Tinggi otomatis untuk responsif */
-            display: block; /* Menghindari ruang di bawah gambar */
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Bayangan pada gambar */
-        }
-
-        /* Judul */
-        .title {
-            font-size: 2rem; /* Ukuran font judul */
-            color: #ffffff; /* Warna teks putih */
-            background: rgba(255, 0, 0, 0.7); /* Latar belakang merah transparan */
-            padding: 10px 20px; /* Padding di sekitar teks */
-            border-radius: 10px; /* Sudut melengkung */
-            margin-bottom: 1rem; /* Spasi antara judul dan gambar */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Bayangan teks */
+            height: auto; /* Memastikan tinggi otomatis */
+            border-radius: 15px; /* Sudut bulat */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
         .content {
-            max-width: 100%; /* Memastikan konten tidak melebihi lebar maksimum */
+            max-width: 600px;
             margin-bottom: 1.5rem;
         }
 
@@ -94,79 +89,31 @@
         }
 
         .cta-button {
-            background-color: #ff9800; /* Warna tombol oranye yang cerah */
+            background-color: #FF9800; /* Warna tombol oranye yang cerah */
             color: #fff;
-            padding: 1rem 2rem; /* Menambah padding untuk tombol */
+            padding: 0.8rem 1.5rem;
             border: none;
             border-radius: 25px;
             font-size: 1rem;
             font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: transform 0.2s, box-shadow 0.2s; /* Transisi animasi */
             text-decoration: none;
-            position: relative; /* Posisi relatif untuk efek 3D */
-            overflow: hidden; /* Menyembunyikan bagian dari efek */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Bayangan untuk efek 3D */
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 300%;
-            height: 300%;
-            background: rgba(255, 255, 255, 0.2);
-            transition: transform 0.5s ease;
-            border-radius: 50%;
-            z-index: 0;
-            transform: translate(-50%, -50%) scale(0); /* Mengatur skala awal */
-        }
-
-        .cta-button:hover::before {
-            transform: translate(-50%, -50%) scale(1); /* Memperbesar saat hover */
         }
 
         .cta-button:hover {
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5), 0 8px 16px rgba(0, 0, 0, 0.2);
-            transform: translateY(-5px); /* Mengangkat tombol saat hover */
-        }
-
-        .cta-button span {
-            position: relative; /* Posisi relatif untuk menempatkan teks di atas efek */
-            z-index: 1; /* Menempatkan teks di atas semua */
-        }
-
-        /* Animasi tombol saat diklik */
-        .cta-button:active {
-            transform: translateY(2px); /* Menurunkan tombol saat diklik */
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Mengurangi bayangan saat diklik */
+            background-color: #fb8c00; /* Warna saat hover yang lebih gelap */
+            transform: translateY(-3px); /* Efek 3D saat hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Bayangan saat hover */
         }
 
         /* Responsif */
         @media (max-width: 768px) {
             .title {
-                font-size: 1.8rem; /* Ukuran font judul lebih kecil untuk tampilan mobile */
+                font-size: 2rem; /* Ukuran font judul lebih kecil di perangkat kecil */
             }
             .content p {
-                font-size: 0.9rem; /* Mengurangi ukuran font untuk tampilan mobile */
-            }
-            .cta-button {
-                padding: 0.8rem 1.5rem; /* Mengurangi padding tombol untuk tampilan mobile */
-                font-size: 0.9rem; /* Mengurangi ukuran font tombol untuk tampilan mobile */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .title {
-                font-size: 1.5rem; /* Ukuran font judul lebih kecil untuk tampilan sangat kecil */
-            }
-            .content p {
-                font-size: 0.8rem; /* Mengurangi ukuran font untuk tampilan sangat kecil */
-            }
-            .cta-button {
-                padding: 0.6rem 1.2rem; /* Mengurangi padding tombol untuk tampilan sangat kecil */
-                font-size: 0.8rem; /* Mengurangi ukuran font tombol untuk tampilan sangat kecil */
+                font-size: 0.9rem; /* Ukuran font deskripsi lebih kecil di perangkat kecil */
             }
         }
     </style>
@@ -178,23 +125,16 @@
 
     <!-- Bagian Utama -->
     <section class="main-section">
-        <h1 class="title">Toko Bunga Cianjur</h1> <!-- Judul ditambahkan di atas gambar -->
+        <div class="title">Toko Bunga Cianjur</div>
         <div class="image-container">
             <img src="https://cianjur.alyssaflorist.com/1.jpg" alt="Alyssa Florist" class="flower-image">
         </div>
         <div class="content">
+            <h1>Alyssa Florist</h1>
             <p>Alyssa Florist, toko bunga terkemuka di Cianjur yang menyediakan beragam rangkaian bunga segar dan indah untuk berbagai keperluan Anda. Dapatkan pelayanan terbaik dengan pengiriman cepat untuk acara spesial Anda!</p>
-            <a href="https://www.alyssaflorist.com" class="cta-button"><span>Kunjungi Toko</span></a>
+            <a href="https://www.alyssaflorist.com" class="cta-button">Kunjungi Toko</a>
         </div>
     </section>
-
-    <script>
-        // Animasi button saat diklik
-        document.querySelector('.cta-button').addEventListener('click', function() {
-            this.classList.add('clicked');
-            setTimeout(() => this.classList.remove('clicked'), 300);
-        });
-    </script>
 
 </body>
 </html>
