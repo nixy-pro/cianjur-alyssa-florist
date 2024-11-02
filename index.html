@@ -89,16 +89,17 @@
         .cta-button {
             background-color: #ff9800; /* Warna tombol oranye yang cerah */
             color: #fff;
-            padding: 0.8rem 1.5rem;
+            padding: 1rem 2rem; /* Menambah padding untuk tombol */
             border: none;
             border-radius: 25px;
             font-size: 1rem;
             font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s ease; /* Mengubah semua properti dengan animasi */
+            transition: all 0.3s ease;
             text-decoration: none;
             position: relative; /* Posisi relatif untuk efek 3D */
             overflow: hidden; /* Menyembunyikan bagian dari efek */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Bayangan untuk efek 3D */
         }
 
         .cta-button::before {
@@ -109,7 +110,7 @@
             width: 300%;
             height: 300%;
             background: rgba(255, 255, 255, 0.2);
-            transition: transform 0.5s ease; /* Transisi halus untuk efek 3D */
+            transition: transform 0.5s ease;
             border-radius: 50%;
             z-index: 0;
             transform: translate(-50%, -50%) scale(0); /* Mengatur skala awal */
@@ -129,11 +130,29 @@
             z-index: 1; /* Menempatkan teks di atas semua */
         }
 
+        /* Animasi tombol saat diklik */
+        .cta-button:active {
+            transform: translateY(2px); /* Menurunkan tombol saat diklik */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Mengurangi bayangan saat diklik */
+        }
+
         /* Responsif */
-        @media (min-width: 768px) {
-            .main-section {
-                flex-direction: column;
-                align-items: center;
+        @media (max-width: 768px) {
+            .content h1 {
+                font-size: 1.5rem; /* Mengurangi ukuran font untuk tampilan mobile */
+            }
+            .content p {
+                font-size: 0.9rem; /* Mengurangi ukuran font untuk tampilan mobile */
+            }
+            .cta-button {
+                padding: 0.8rem 1.5rem; /* Mengurangi padding tombol untuk tampilan mobile */
+                font-size: 0.9rem; /* Mengurangi ukuran font tombol untuk tampilan mobile */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .image-container {
+                max-width: 100%; /* Memastikan gambar responsif di layar kecil */
             }
         }
     </style>
