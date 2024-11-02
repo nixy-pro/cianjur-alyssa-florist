@@ -49,8 +49,8 @@
             background-color: rgba(255, 87, 34, 0.9); /* Warna merah cerah */
             width: 100%;
             padding: 1rem;
-            position: fixed;
-            top: 10px;
+            position: fixed; /* Tetap di atas */
+            top: 0; /* Posisi atas */
             left: 50%;
             transform: translateX(-50%);
             z-index: 1000; /* Menempatkan di atas konten */
@@ -78,7 +78,7 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            padding: 8rem 1rem 2rem; /* Memberikan ruang untuk navbar */
+            padding: 6rem 1rem 2rem; /* Memberikan ruang untuk navbar */
             position: relative;
             z-index: 10;
         }
@@ -87,6 +87,7 @@
             max-width: 300px;
             width: 100%;
             margin-bottom: 1.5rem;
+            margin-top: 4rem; /* Jarak antara navbar dan gambar */
         }
 
         .flower-image {
